@@ -1,10 +1,6 @@
 name: React Native Android Build
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -43,4 +39,3 @@ jobs:
       with:
         name: app-release
         path: MyApp/android/app/build/outputs/apk/release/app-release.apk
-        
