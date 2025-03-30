@@ -22,7 +22,7 @@ jobs:
         
     - name: Create new React Native project
       run: |
-        npx react-native init MyApp
+        npx @react-native-community/cli init MyApp
         cd MyApp
         echo "Created React Native project"
         
@@ -43,3 +43,4 @@ jobs:
       with:
         name: app-release
         path: MyApp/android/app/build/outputs/apk/release/app-release.apk
+        
