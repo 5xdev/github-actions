@@ -1,15 +1,11 @@
-name: React Native iOS Simulator Build
+name: React Native Android Build
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     
     steps:
     - name: Checkout repository
@@ -31,27 +27,15 @@ jobs:
         cd MyApp
         npm install
         
-    - name: Install Cocoapods dependencies
-      run: |
-        cd MyApp/ios
-        pod install
-        
-    - name: Build iOS app for simulator
+    - name: Build Android Release APK
       run: |
         cd MyApp
-        npx react-native run-ios --no-packager --configuration Release --simulator="iPhone 14"
-        mkdir -p build/Release-iphonesimulator
-        # The build output location can vary slightly depending on Xcode version
-        # This is the most common location
-        if [ -d "ios/build/Build/Products/Release-iphonesimulator" ]; then
-          cp -R ios/build/Build/Products/Release-iphonesimulator/MyApp.app build/Release-iphonesimulator/
-        else
-          # Fallback to alternate location
-          cp -R ios/build/Products/Release-iphonesimulator/MyApp.app build/Release-iphonesimulator/
-        fi
+        cd android
+        chmod +x gradlew
+        ./gradlew assembleRelease
         
-    - name: Upload iOS simulator build as artifact
+    - name: Upload APK as artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ios-simulator-build
-        path: MyApp/build/Release-iphonesimulator/MyApp.app
+        name: app-release
+        path: MyApp/android/app/build/outputs/apk/release/app-release.apk
