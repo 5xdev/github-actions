@@ -27,12 +27,8 @@ jobs:
           distribution: 'temurin'
           java-version: ${{ matrix.jdk }}
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Install specific React Native version
-        run: npm install react-native@0.${{ matrix.rn }} --save-exact
-
       - name: Build
         run: |
           echo "Build logic here for RN 0.${{ matrix.rn }}, Node ${matrix.node}, JDK ${matrix.jdk}"
+          echo "Node version: $(node -v) JDK: $(java --version)"
+          
