@@ -1,0 +1,38 @@
+name: Build React Native App
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [14, 16, 18, 20, 22]
+        rn: [71, 72, 73, 74, 75, 76, 77]
+        jdk: [11, 17]
+    name: Node ${{ matrix.node }} - RN ${{ matrix.rn }} - JDK ${{ matrix.jdk }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ matrix.jdk }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install specific React Native version
+        run: npm install react-native@0.${{ matrix.rn }} --save-exact
+
+      - name: Build
+        run: |
+          echo "Build logic here for RN 0.${{ matrix.rn }}, Node ${matrix.node}, JDK ${matrix.jdk}"
