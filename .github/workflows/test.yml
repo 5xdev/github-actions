@@ -29,6 +29,5 @@ jobs:
 
       - name: Build
         run: |
-          echo "Build logic here for RN 0.${{ matrix.rn }}, Node ${matrix.node}, JDK ${matrix.jdk}"
           echo "Node version: $(node -v) JDK: $(java --version)"
           
