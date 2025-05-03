@@ -1,0 +1,43 @@
+name: CC React Native Android Build
+
+on:
+  push:
+     branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Set up Node.js LTS
+      uses: actions/setup-node@v3
+      with:
+        node-version: 'lts/*'
+        
+    - name: Create new React Native project
+      run: |
+        git clone https://github.com/cometchat/cometchat-uikit-react-native.git
+        cd cometchat-uikit-react-native/examples/SampleApp
+        ls
+        
+    - name: Install dependencies
+      run: |
+        cd cometchat-uikit-react-native/examples/SampleApp
+        npm install
+        
+    - name: Build Android Release APK
+      run: |
+        cd cometchat-uikit-react-native/examples/SampleApp
+        cd android
+        chmod +x gradlew
+        ./gradlew assembleRelease
+        
+    - name: Upload APK as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-release
+        path: MyApp/android/app/build/outputs/apk/release/app-release.apk
