@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [14, 16, 18, 20, 22]
+        node: [14, 18, 20, 22]
         rn: [71, 72, 73, 74, 75, 76, 77]
         jdk: [11, 17]
     name: Node ${{ matrix.node }} - RN ${{ matrix.rn }} - JDK ${{ matrix.jdk }}
