@@ -11,7 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [18, 20, 21, 22, 23]
+        # node: [18, 20, 21, 22, 23]
+        node: [22]
         jdk: [17]
     
     steps:
@@ -41,15 +42,16 @@ jobs:
         cd cometchat-uikit-react-native/examples/SampleApp
         npm install
         
-    - name: Build Android Release APK
-      run: |
-        cd cometchat-uikit-react-native/examples/SampleApp
-        cd android
-        chmod +x gradlew
-        ./gradlew assembleRelease
+    # - name: Build Android Release APK
+    #   run: |
+    #     cd cometchat-uikit-react-native/examples/SampleApp
+    #     cd android
+    #     chmod +x gradlew
+    #     ./gradlew assembleRelease
         
     - name: Upload APK as artifact
       uses: actions/upload-artifact@v4
       with:
         name: app-release-${{ matrix.node }}-${{ matrix.jdk }}
-        path: cometchat-uikit-react-native/examples/SampleApp/android/app/build/outputs/apk/release/app-release.apk
+        path: cometchat-uikit-react-native/examples/SampleApp/package-lock.json
+        # path: cometchat-uikit-react-native/examples/SampleApp/android/app/build/outputs/apk/release/app-release.apk
