@@ -41,6 +41,7 @@ jobs:
       run: |
         cd cometchat-uikit-react-native/examples/SampleApp
         npm install
+        ls
         
     # - name: Build Android Release APK
     #   run: |
