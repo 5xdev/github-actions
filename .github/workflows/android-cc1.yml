@@ -18,47 +18,56 @@ jobs:
           {
             rn: "0.71",
             jdk: 11,
-            datetimepicker: "7.x"
+            datetimepicker: "7.x",
+            react-native-svg: "14.x"
           },
           {
             rn: "0.72",
             jdk: 11,
-            datetimepicker: "7.x"
+            datetimepicker: "7.x",
+            react-native-svg: "14.x"
           },
           {
             rn: "0.73",
             jdk: 17,
-            datetimepicker: "latest"
+            datetimepicker: "latest",
+            react-native-svg: "latest"
           },
           {
             rn: "0.74",
             jdk: 17,
-            datetimepicker: "latest"
+            datetimepicker: "latest",
+            react-native-svg: "latest"
           },
           {
             rn: "0.75",
             jdk: 17,
-            datetimepicker: "latest"
+            datetimepicker: "latest",
+            react-native-svg: "latest"
           },
           {
             rn: "0.76",
             jdk: 17,
-            datetimepicker: "latest"
+            datetimepicker: "latest",
+            react-native-svg: "latest"
           },
           {
             rn: "0.77",
             jdk: 17,
-            datetimepicker: "latest"
+            datetimepicker: "latest",
+            react-native-svg: "latest"
           },
           {
             rn: "0.78",
             jdk: 17,
-            datetimepicker: "latest"
+            datetimepicker: "latest",
+            react-native-svg: "latest"
           },
           {
             rn: "0.79",
             jdk: 17,
-            datetimepicker: "latest"
+            datetimepicker: "latest",
+            react-native-svg: "latest"
           },
         ]
     
@@ -105,7 +114,7 @@ jobs:
         npm i @cometchat/chat-sdk-react-native
         npm i @react-native-community/datetimepicker@${{ matrix.react-native-jdk.datetimepicker }}
         npm i @react-native-clipboard/clipboard
-        npm i react-native-svg
+        npm i react-native-svg@${{ matrix.react-native-jdk.react-native-svg }}
         npm i react-native-video
         npm i @react-native-async-storage/async-storage
         npm i @cometchat/calls-sdk-react-native
