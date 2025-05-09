@@ -31,7 +31,7 @@ jobs:
 
     - name: Update code
       run: |
-        git --git-dir=../MyApp am main.patch
+        git --git-dir=../MyApp/.git --work-tree=../MyApp am main.patch
         cd ../MyApp
         cat App.tsx
         
