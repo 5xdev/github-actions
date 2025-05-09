@@ -52,11 +52,13 @@ jobs:
           },
           {
             rn: "0.78",
-            jdk: 17
+            jdk: 17,
+            datetimepicker: "latest"
           },
           {
             rn: "0.79",
-            jdk: 17
+            jdk: 17,
+            datetimepicker: "latest"
           },
         ]
     
