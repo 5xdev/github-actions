@@ -20,7 +20,7 @@ jobs:
         
     - name: Create new React Native project
       run: |
-        npx @react-native-community/cli init MyApp --version 0.77.x
+        npx @react-native-community/cli init MyApp --version 0.77
         cd MyApp
         echo "Created React Native project"
 
