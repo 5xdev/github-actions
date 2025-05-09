@@ -120,4 +120,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: app-release
-        path: app-release.apk
+        path: app-release-${{ matrix.node }}-${{ matrix.react-native-jdk.jdk }}-${{ matrix.react-native-jdk.rn }}.apk
