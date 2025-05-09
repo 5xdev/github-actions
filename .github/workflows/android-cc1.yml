@@ -32,9 +32,12 @@ jobs:
     - name: Update code
       run: |
         ls
-        git --git-dir=../MyApp/.git --work-tree=../MyApp am main.patch
+        cp main.patch ../MyApp/main.patch
         cd ../MyApp
-        cat App.tsx
+        ls
+        # git --git-dir=../MyApp/.git --work-tree=../MyApp am main.patch
+        # cd ../MyApp
+        # cat App.tsx
         
     - name: Install dependencies
       run: |
