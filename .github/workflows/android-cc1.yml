@@ -20,7 +20,11 @@ jobs:
         
     - name: Create new React Native project
       run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "Github Action"
+        cd ..
         npx @react-native-community/cli init MyApp --version 0.77
+        ls
         cd MyApp
         echo "Created React Native project"
 
@@ -28,8 +32,8 @@ jobs:
       run: |
         cd MyApp
         rm App.tsx
-        git config --global user.email "action@github.com"
-        git config --global user.name "Github Action"
+        git add .
+        git commit -m "Remvoed App.tsx"
         git status
         # git am ../main.patch
         # cat App.tsx
