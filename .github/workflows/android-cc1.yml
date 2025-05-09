@@ -9,12 +9,49 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
-        # node: [18, 20, 21, 22, 23]
-        node: [22]
-        react-native: ["0.77"]
-        # jdk: [17]
+        node: [20, 22]
+        # react-native: ["0.70","0.71","0.72","0.73","0.74","0.75","0.76","0.77", "0.78", "0.79"]
+        # jdk: [11,17]
+        react-native-jdk: [
+          {
+            rn: "0.71",
+            jdk: 11
+          },
+          {
+            rn: "0.72",
+            jdk: 11
+          },
+          {
+            rn: "0.73",
+            jdk: 17
+          },
+          {
+            rn: "0.74",
+            jdk: 17
+          },
+          {
+            rn: "0.75",
+            jdk: 17
+          },
+          {
+            rn: "0.76",
+            jdk: 17
+          },
+          {
+            rn: "0.77",
+            jdk: 17
+          },
+          {
+            rn: "0.78",
+            jdk: 17
+          },
+          {
+            rn: "0.79",
+            jdk: 17
+          },
+        ]
     
     steps:
     - name: Checkout repository
@@ -24,13 +61,19 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node }}
+
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: ${{ matrix.react-native-jdk.jdk }}
       
     - name: Create new React Native project
       run: |
         git config --global user.email "action@github.com"
         git config --global user.name "Github Action"
         cd ..
-        npx @react-native-community/cli init MyApp --version ${{ matrix.react-native }}
+        npx @react-native-community/cli init MyApp --version ${{ matrix.react-native-jdk.rn }}
         cd MyApp
         rm App.tsx
         git add .
