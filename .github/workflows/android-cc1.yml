@@ -1,8 +1,8 @@
 name: React Native Android Build
 
 on:
-  # push:
-  #    branches: [ main ]
+  push:
+     branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -23,6 +23,14 @@ jobs:
         npx @react-native-community/cli init MyApp --version 0.77.x
         cd MyApp
         echo "Created React Native project"
+
+    - name: Update code
+      run: |
+        cd MyApp
+        rm App.tsx
+        ls
+        cd ..
+        ls
         
     - name: Install dependencies
       run: |
