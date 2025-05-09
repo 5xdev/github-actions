@@ -30,7 +30,7 @@ jobs:
           {
             rn: "0.72",
             jdk: 17,
-            datetimepicker: "latest",
+            datetimepicker: "7.x",
             react-native-svg: "latest"
           },
           {
