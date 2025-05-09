@@ -28,9 +28,8 @@ jobs:
       run: |
         cd MyApp
         rm App.tsx
-        ls
-        cd ..
-        ls
+        git am ../main.patch
+        cat App.tsx
         
     - name: Install dependencies
       run: |
