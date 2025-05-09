@@ -30,8 +30,9 @@ jobs:
         rm App.tsx
         git config --global user.email "action@github.com"
         git config --global user.name "Github Action"
-        git am ../main.patch
-        cat App.tsx
+        git status
+        # git am ../main.patch
+        # cat App.tsx
         
     - name: Install dependencies
       run: |
