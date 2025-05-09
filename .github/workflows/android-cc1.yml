@@ -34,10 +34,8 @@ jobs:
         ls
         cp main.patch ../MyApp/main.patch
         cd ../MyApp
-        ls
-        # git --git-dir=../MyApp/.git --work-tree=../MyApp am main.patch
-        # cd ../MyApp
-        # cat App.tsx
+        git am main.patch
+        cat App.tsx
         
     - name: Install dependencies
       run: |
