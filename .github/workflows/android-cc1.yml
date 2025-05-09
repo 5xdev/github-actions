@@ -28,6 +28,12 @@ jobs:
             react-native-svg: "14.x"
           },
           {
+            rn: "0.72",
+            jdk: 17,
+            datetimepicker: "latest",
+            react-native-svg: "latest"
+          },
+          {
             rn: "0.73",
             jdk: 17,
             datetimepicker: "latest",
