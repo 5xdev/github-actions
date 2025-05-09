@@ -103,7 +103,7 @@ jobs:
         # npm i @cometchat/chat-uikit-react-native
         npm i @cometchat/chat-uikit-react-native@5.0.1-beta-5 --registry=https://npm.cloudsmith.io/cometchat/call-team/
         npm i @cometchat/chat-sdk-react-native
-        npm i @react-native-community/datetimepicker
+        npm i @react-native-community/datetimepicker@${{ matrix.react-native-jdk.datetimepicker }}
         npm i @react-native-clipboard/clipboard
         npm i react-native-svg
         npm i react-native-video
