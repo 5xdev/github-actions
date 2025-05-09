@@ -121,3 +121,4 @@ jobs:
       with:
         name: app-release
         path: app-release-${{ matrix.node }}-${{ matrix.react-native-jdk.jdk }}-${{ matrix.react-native-jdk.rn }}.apk
+        continue-on-error: true
