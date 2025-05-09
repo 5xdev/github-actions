@@ -1,0 +1,56 @@
+name: React Native Android Build
+
+on:
+  # push:
+  #    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Set up Node.js LTS
+      uses: actions/setup-node@v3
+      with:
+        node-version: 'lts/*'
+        
+    - name: Create new React Native project
+      run: |
+        npx @react-native-community/cli init MyApp --version 0.77.x
+        cd MyApp
+        echo "Created React Native project"
+        
+    - name: Install dependencies
+      run: |
+        cd MyApp
+        npm install
+        npm i @cometchat/chat-uikit-react-native
+        npm i @cometchat/chat-sdk-react-native
+        npm i @react-native-community/datetimepicker
+        npm i @react-native-clipboard/clipboard
+        npm i react-native-svg
+        npm i react-native-video
+        npm i @react-native-async-storage/async-storage
+        npm i @cometchat/calls-sdk-react-native
+        npm i @react-native-community/netinfo
+        npm i react-native-background-timer
+        npm i react-native-callstats
+        npm i react-native-webrtc@1.106.1
+
+        
+    - name: Build Android Release APK
+      run: |
+        cd MyApp
+        cd android
+        chmod +x gradlew
+        ./gradlew assembleRelease
+        
+    - name: Upload APK as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-release
+        path: MyApp/android/app/build/outputs/apk/release/app-release.apk
