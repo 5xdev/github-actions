@@ -39,7 +39,7 @@ jobs:
         
     - name: Install dependencies
       run: |
-        cd MyApp
+        cd ../MyApp
         npm install
         npm i @cometchat/chat-uikit-react-native
         npm i @cometchat/chat-sdk-react-native
@@ -57,7 +57,7 @@ jobs:
         
     - name: Build Android Release APK
       run: |
-        cd MyApp
+        cd ../MyApp
         cd android
         chmod +x gradlew
         ./gradlew assembleRelease
@@ -66,4 +66,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: app-release
-        path: MyApp/android/app/build/outputs/apk/release/app-release.apk
+        path: ../MyApp/android/app/build/outputs/apk/release/app-release.apk
