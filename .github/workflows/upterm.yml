@@ -29,6 +29,6 @@ jobs:
             --server ssh://uptermd.upterm.dev:22 \
             --known-hosts ~/.ssh/known_hosts \
             --private-key ~/.ssh/id_rsa \
-            --github-user YOUR_GITHUB_USERNAME \
+            --github-user 5xdev \
             --accept \
             -- bash
