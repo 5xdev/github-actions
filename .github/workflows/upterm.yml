@@ -17,15 +17,10 @@ jobs:
           tar -xzf upterm_linux_amd64.tar.gz
           sudo mv upterm /usr/local/bin/
 
-      - name: Generate SSH key
+      - name: Prepare SSH
         run: |
           mkdir -p ~/.ssh
           ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
-          echo "==== Your Public Key (add to GitHub if needed) ===="
-          cat ~/.ssh/id_rsa.pub
-
-      - name: Setup known_hosts
-        run: |
           ssh-keyscan -p 22 uptermd.upterm.dev >> ~/.ssh/known_hosts
 
       - name: Start Upterm session
@@ -34,6 +29,6 @@ jobs:
             --server ssh://uptermd.upterm.dev:22 \
             --known-hosts ~/.ssh/known_hosts \
             --private-key ~/.ssh/id_rsa \
-            --github-user 5xdev \
+            --github-user YOUR_GITHUB_USERNAME \
             --accept \
             -- bash
