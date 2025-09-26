@@ -2,6 +2,7 @@ name: Debug with Upterm
 
 on:
   workflow_dispatch: # run manually from Actions tab
+  push:
 
 jobs:
   debug:
