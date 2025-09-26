@@ -1,0 +1,22 @@
+name: CI with Upterm Debug
+
+on:
+  workflow_dispatch: # allows manual trigger
+  push:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install upterm
+        run: |
+          wget https://github.com/owenthereal/upterm/releases/download/v0.15.3/upterm_linux_amd64.tar.gz
+          tar -xzf upterm_linux_amd64.tar.gz
+          sudo mv upterm /usr/local/bin/
+
+      - name: Start upterm session
+        run: |
+          upterm host -- bash
