@@ -11,7 +11,54 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        git-ref: ["stable/jitsi-meet_9364"]
+        git-ref: [
+          "stable/jitsi-meet_10532",
+          "stable/jitsi-meet_10431",
+          "stable/jitsi-meet_10314",
+          "stable/jitsi-meet_10184",
+          "stable/jitsi-meet_10169",
+          "stable/jitsi-meet_10133",
+          "stable/jitsi-meet_10078",
+          "stable/jitsi-meet_10073",
+          "stable/jitsi-meet_10008",
+          "stable/jitsi-meet_9955",
+          "stable/jitsi-meet_9909",
+          "stable/jitsi-meet_9823",
+          "stable/jitsi-meet_9779",
+          "stable/jitsi-meet_9753",
+          "stable/jitsi-meet_9646",
+          "stable/jitsi-meet_9584",
+          "stable/jitsi-meet_9457",
+          "stable/jitsi-meet_9364",
+          "stable/jitsi-meet_9258",
+          "stable/jitsi-meet_9220",
+          "stable/jitsi-meet_9164",
+          "stable/jitsi-meet_9111",
+          "stable/jitsi-meet_9078",
+          "stable/jitsi-meet_8960",
+          "stable/jitsi-meet_8922",
+          "stable/jitsi-meet_8719",
+          "stable/jitsi-meet_8615",
+          "stable/jitsi-meet_8319",
+          "stable/jitsi-meet_8252",
+          "stable/jitsi-meet_8218",
+          "stable/jitsi-meet_8194",
+          "stable/jitsi-meet_8138",
+          "stable/jitsi-meet_8133",
+          "stable/jitsi-meet_8127",
+          "stable/jitsi-meet_8044",
+          "stable/jitsi-meet_7882",
+          "stable/jitsi-meet_7830",
+          "stable/jitsi-meet_7648",
+          "stable/jitsi-meet_7577",
+          "stable/jitsi-meet_7439",
+          "stable/jitsi-meet_7416",
+          "stable/jitsi-meet_7287",
+          "stable/jitsi-meet_7210",
+          "stable/jitsi-meet_7001",
+          "stable/jitsi-meet_6865",
+          "stable/jitsi-meet_6826"
+        ]
     
     steps:
     - name: Checkout this repo
@@ -32,13 +79,6 @@ jobs:
     - name: Install dependencies
       working-directory: jitsi-repo
       run: npm i
-
-    - name: Set env
-      run: |
-        SAFE_REF="${{ matrix.git-ref }}"
-        SAFE_REF="${SAFE_REF//\//-}"
-        echo "SAFE_REF=$SAFE_REF" >> $GITHUB_ENV
-        echo "Using SAFE_REF: $SAFE_REF"
 
     - name: Modify index.html
       working-directory: jitsi-repo
