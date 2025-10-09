@@ -57,5 +57,5 @@ jobs:
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         command: pages deploy jitsi-repo/jitsi-meet --project-name='ccjm' --branch='test'
 
-    - name: Setup upterm session
-      uses: owenthereal/action-upterm@v1
+    # - name: Setup upterm session
+    #   uses: owenthereal/action-upterm@v1
