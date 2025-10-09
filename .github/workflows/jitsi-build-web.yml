@@ -22,4 +22,4 @@ jobs:
         node-version: 'lts/*'
 
     - name: Setup upterm session
-        uses: owenthereal/action-upterm@v1
+      uses: owenthereal/action-upterm@v1
