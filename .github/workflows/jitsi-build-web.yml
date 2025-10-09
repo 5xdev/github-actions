@@ -35,7 +35,7 @@ jobs:
         SAFE_REF="${{ matrix.git-ref }}"
         SAFE_REF="${SAFE_REF//\//-}"
 
-        echo "SAFE_REF=$SAFE_REF" >> $GITHUB_ENV  # 👈 adds it to environment
+        echo "SAFE_REF=$SAFE_REF" >> $GITHUB_ENV
         echo "Using SAFE_REF: $SAFE_REF"
         npm i
 
