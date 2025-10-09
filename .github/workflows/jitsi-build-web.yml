@@ -47,11 +47,11 @@ jobs:
         make source-package
         tar -xvjf jitsi-meet.tar.bz2
         
-    - name: Upload Build
-      uses: actions/upload-artifact@v4
-      with:
-        name: website-zip
-        path: jitsi-repo/jitsi-meet.tar.bz2
+    # - name: Upload Build
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: website-zip
+    #     path: jitsi-repo/jitsi-meet.tar.bz2
 
     - name: Deploy
       uses: cloudflare/wrangler-action@v3
