@@ -12,52 +12,52 @@ jobs:
       fail-fast: false
       matrix:
         git-ref: [
-          # "stable/jitsi-meet_10532",
-          # "stable/jitsi-meet_10431",
-          # "stable/jitsi-meet_10314",
-          # "stable/jitsi-meet_10184",
-          # "stable/jitsi-meet_10169",
-          # "stable/jitsi-meet_10133",
-          # "stable/jitsi-meet_10078",
-          # "stable/jitsi-meet_10073",
-          # "stable/jitsi-meet_10008",
-          # "stable/jitsi-meet_9955",
-          # "stable/jitsi-meet_9909",
-          # "stable/jitsi-meet_9823",
-          # "stable/jitsi-meet_9779",
-          # "stable/jitsi-meet_9753",
-          # "stable/jitsi-meet_9646",
-          # "stable/jitsi-meet_9584",
-          # "stable/jitsi-meet_9457",
-          # "stable/jitsi-meet_9364",
-          # "stable/jitsi-meet_9258",
-          # "stable/jitsi-meet_9220",
-          # "stable/jitsi-meet_9164",
-          # "stable/jitsi-meet_9111",
-          # "stable/jitsi-meet_9078",
-          # "stable/jitsi-meet_8960",
-          # "stable/jitsi-meet_8922",
-          # "stable/jitsi-meet_8719",
-          # "stable/jitsi-meet_8615",
-          # "stable/jitsi-meet_8319",
-          # "stable/jitsi-meet_8252",
-          # "stable/jitsi-meet_8218",
-          # "stable/jitsi-meet_8194",
-          # "stable/jitsi-meet_8138",
-          # "stable/jitsi-meet_8133",
-          # "stable/jitsi-meet_8127",
-          # "stable/jitsi-meet_8044",
-          "stable/jitsi-meet_7882",
-          "stable/jitsi-meet_7830",
-          "stable/jitsi-meet_7648",
-          "stable/jitsi-meet_7577",
-          "stable/jitsi-meet_7439",
-          "stable/jitsi-meet_7416",
-          "stable/jitsi-meet_7287",
-          "stable/jitsi-meet_7210",
-          "stable/jitsi-meet_7001",
-          "stable/jitsi-meet_6865",
-          # "stable/jitsi-meet_6826"
+          # { node: "22.x", tag: "stable/jitsi-meet_10532" },
+          # { node: "22.x", tag: "stable/jitsi-meet_10431" },
+          # { node: "22.x", tag: "stable/jitsi-meet_10314" },
+          # { node: "22.x", tag: "stable/jitsi-meet_10184" },
+          # { node: "22.x", tag: "stable/jitsi-meet_10169" },
+          # { node: "22.x", tag: "stable/jitsi-meet_10133" },
+          # { node: "22.x", tag: "stable/jitsi-meet_10078" },
+          # { node: "22.x", tag: "stable/jitsi-meet_10073" },
+          # { node: "22.x", tag: "stable/jitsi-meet_10008" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9955" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9909" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9823" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9779" },
+          { node: "22.x", tag: "stable/jitsi-meet_9753" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9646" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9584" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9457" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9364" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9258" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9220" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9164" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9111" },
+          # { node: "22.x", tag: "stable/jitsi-meet_9078" },
+          # { node: "22.x", tag: "stable/jitsi-meet_8960" },
+          { node: "22.x", tag: "stable/jitsi-meet_8922" },
+          # { node: "22.x", tag: "stable/jitsi-meet_8719" },
+          # { node: "22.x", tag: "stable/jitsi-meet_8615" },
+          { node: "16.x", tag: "stable/jitsi-meet_8319" },
+          { node: "16.x", tag: "stable/jitsi-meet_8252" },
+          { node: "16.x", tag: "stable/jitsi-meet_8218" },
+          { node: "16.x", tag: "stable/jitsi-meet_8194" },
+          { node: "16.x", tag: "stable/jitsi-meet_8138" },
+          { node: "16.x", tag: "stable/jitsi-meet_8133" },
+          { node: "16.x", tag: "stable/jitsi-meet_8127" },
+          { node: "16.x", tag: "stable/jitsi-meet_8044" },
+          { node: "16.x", tag: "stable/jitsi-meet_7882" },
+          { node: "16.x", tag: "stable/jitsi-meet_7830" },
+          { node: "16.x", tag: "stable/jitsi-meet_7648" },
+          { node: "16.x", tag: "stable/jitsi-meet_7577" },
+          { node: "16.x", tag: "stable/jitsi-meet_7439" },
+          { node: "16.x", tag: "stable/jitsi-meet_7416" },
+          { node: "16.x", tag: "stable/jitsi-meet_7287" },
+          { node: "16.x", tag: "stable/jitsi-meet_7210" },
+          { node: "16.x", tag: "stable/jitsi-meet_7001" },
+          { node: "16.x", tag: "stable/jitsi-meet_6865" },
+          # { node: "16.x", tag: "stable/jitsi-meet_6826" },
         ]
     
     steps:
@@ -68,13 +68,13 @@ jobs:
       uses: actions/checkout@v4
       with:
         repository: jitsi/jitsi-meet
-        ref: ${{ matrix.git-ref }}
+        ref: ${{ matrix.git-ref.tag }}
         path: jitsi-repo
       
     - name: Set up Node.js LTS
       uses: actions/setup-node@v5
       with:
-        node-version: '16.x'
+        node-version: ${{ matrix.git-ref.node }}
 
     - name: Install dependencies
       working-directory: jitsi-repo
@@ -106,7 +106,7 @@ jobs:
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        command: pages deploy jitsi-repo/jitsi-meet --project-name='ccjm' --branch=${{ matrix.git-ref }}
+        command: pages deploy jitsi-repo/jitsi-meet --project-name='ccjm' --branch=${{ matrix.git-ref.tag }}
 
     # - name: Setup upterm session
     #   uses: owenthereal/action-upterm@v1
