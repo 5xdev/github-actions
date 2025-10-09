@@ -32,7 +32,7 @@ jobs:
     - name: Install dependencies
       working-directory: jitsi-repo
       env:
-        SAFE_REF: ${{ matrix.git-ref && replace(matrix.git-ref, '/', '-') }}
+        SAFE_REF: $(echo "${{ matrix.git-ref }}" | sed 's/\//-/g')
       run: echo $SAFE_REF
 
     - name: Modify index.html
