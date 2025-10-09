@@ -29,9 +29,6 @@ jobs:
       working-directory: jitsi-repo
       run: npm i
 
-    - name: Setup upterm session
-      uses: owenthereal/action-upterm@v1
-
     - name: Modify index.html
       working-directory: jitsi-repo
       run: |
@@ -44,6 +41,12 @@ jobs:
       run: |
         make
         make source-package
+        
+    - name: Upload Build
+      uses: actions/upload-artifact@v4
+      with:
+        name: website-zip
+        path: jitsi-repo/jitsi-meet.tar.bz2
 
     - name: Setup upterm session
       uses: owenthereal/action-upterm@v1
