@@ -31,7 +31,9 @@ jobs:
 
     - name: Install dependencies
       working-directory: jitsi-repo
-      run: npm i
+      env:
+        SAFE_REF: ${{ matrix.git-ref && replace(matrix.git-ref, '/', '-') }}
+      run: echo $SAFE_REF
 
     - name: Modify index.html
       working-directory: jitsi-repo
