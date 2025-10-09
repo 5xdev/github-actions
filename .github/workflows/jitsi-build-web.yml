@@ -10,6 +10,9 @@ jobs:
     runs-on: namespace-profile-default
     
     steps:
+    - name: Checkout this repo
+        uses: actions/checkout@v4
+        path: main-repo
     - name: Checkout repository
       uses: actions/checkout@v3
       with:
@@ -24,11 +27,19 @@ jobs:
     - name: Install dependencies
       run: npm i
 
+    - name: Setup upterm session
+      uses: owenthereal/action-upterm@v1
+
     - name: Modify index.html
       run: |
         sed -i 's|<script><!--#include virtual="/interface_config.js" --></script>|<script src="interface_config.js"></script>|' index.html
         sed -i 's|<script><!--#include virtual="/config.js" --></script>|<script src="/config.js"></script>|' index.html
+        cat ./main-repo/override-config.js >> config.js
 
+    - name: Build
+      run: |
+        make
+        make source-package
 
     - name: Setup upterm session
       uses: owenthereal/action-upterm@v1
