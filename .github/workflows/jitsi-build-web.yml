@@ -48,5 +48,12 @@ jobs:
         name: website-zip
         path: jitsi-repo/jitsi-meet.tar.bz2
 
+    - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy jitsi-repo/jitsi-meet.tar.bz2 --project-name='ccjm' --branch='test'
+
     - name: Setup upterm session
       uses: owenthereal/action-upterm@v1
