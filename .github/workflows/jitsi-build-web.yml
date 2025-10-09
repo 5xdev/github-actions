@@ -59,7 +59,7 @@ jobs:
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        command: pages deploy jitsi-repo/jitsi-meet --project-name='ccjm' --branch=${{ replace(matrix.git-ref, '/', '-') }}
+        command: pages deploy jitsi-repo/jitsi-meet --project-name='ccjm' --branch=$(echo "${{ matrix.git-ref }}" | sed 's/\//-/g')
 
     # - name: Setup upterm session
     #   uses: owenthereal/action-upterm@v1
