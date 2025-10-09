@@ -33,7 +33,7 @@ jobs:
       working-directory: jitsi-repo
       env:
         SAFE_REF: $(echo "${{ matrix.git-ref }}" | sed 's/\//-/g')
-      run: echo $SAFE_REF
+      run: echo "${{ matrix.git-ref }}" | sed 's/\//-/g'
 
     - name: Modify index.html
       working-directory: jitsi-repo
