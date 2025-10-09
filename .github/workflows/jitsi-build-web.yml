@@ -31,9 +31,13 @@ jobs:
 
     - name: Install dependencies
       working-directory: jitsi-repo
-      env:
-        SAFE_REF: $(echo "${{ matrix.git-ref }}" | sed 's/\//-/g')
-      run: echo "${{ matrix.git-ref }}" | sed 's/\//-/g'
+      run: |
+        SAFE_REF="${{ matrix.git-ref }}"
+        SAFE_REF="${SAFE_REF//\//-}"
+
+        echo "SAFE_REF=$SAFE_REF" >> $GITHUB_ENV  # 👈 adds it to environment
+        echo "Using SAFE_REF: $SAFE_REF"
+        npm i
 
     - name: Modify index.html
       working-directory: jitsi-repo
