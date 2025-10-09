@@ -41,6 +41,7 @@ jobs:
       run: |
         make
         make source-package
+        tar -xvjf jitsi-meet.tar.bz2
         
     - name: Upload Build
       uses: actions/upload-artifact@v4
@@ -54,7 +55,7 @@ jobs:
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        command: pages deploy jitsi-repo/jitsi-meet.tar.bz2 --project-name='ccjm' --branch='test'
+        command: pages deploy jitsi-repo/jitsi-meet --project-name='ccjm' --branch='test'
 
     - name: Setup upterm session
       uses: owenthereal/action-upterm@v1
