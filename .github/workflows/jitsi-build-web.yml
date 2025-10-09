@@ -47,17 +47,17 @@ jobs:
           # "stable/jitsi-meet_8133",
           # "stable/jitsi-meet_8127",
           # "stable/jitsi-meet_8044",
-          # "stable/jitsi-meet_7882",
-          # "stable/jitsi-meet_7830",
-          # "stable/jitsi-meet_7648",
-          # "stable/jitsi-meet_7577",
-          # "stable/jitsi-meet_7439",
-          # "stable/jitsi-meet_7416",
-          # "stable/jitsi-meet_7287",
-          # "stable/jitsi-meet_7210",
-          # "stable/jitsi-meet_7001",
-          # "stable/jitsi-meet_6865",
-          "stable/jitsi-meet_6826"
+          "stable/jitsi-meet_7882",
+          "stable/jitsi-meet_7830",
+          "stable/jitsi-meet_7648",
+          "stable/jitsi-meet_7577",
+          "stable/jitsi-meet_7439",
+          "stable/jitsi-meet_7416",
+          "stable/jitsi-meet_7287",
+          "stable/jitsi-meet_7210",
+          "stable/jitsi-meet_7001",
+          "stable/jitsi-meet_6865",
+          # "stable/jitsi-meet_6826"
         ]
     
     steps:
