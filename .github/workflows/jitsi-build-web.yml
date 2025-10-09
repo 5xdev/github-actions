@@ -25,20 +25,19 @@ jobs:
       with:
         node-version: 'lts/*'
 
-    - name: Setup upterm session
-      uses: owenthereal/action-upterm@v1
-
     - name: Install dependencies
+      working-directory: jitsi-repo
       run: npm i
 
     - name: Setup upterm session
       uses: owenthereal/action-upterm@v1
 
     - name: Modify index.html
+      working-directory: jitsi-repo
       run: |
         sed -i 's|<script><!--#include virtual="/interface_config.js" --></script>|<script src="interface_config.js"></script>|' index.html
         sed -i 's|<script><!--#include virtual="/config.js" --></script>|<script src="/config.js"></script>|' index.html
-        cat ./main-repo/override-config.js >> config.js
+        cat ../override-config.js >> config.js
 
     - name: Build
       run: |
