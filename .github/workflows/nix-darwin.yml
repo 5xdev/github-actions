@@ -1,0 +1,27 @@
+name: Nix Flake Build on macOS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build on macOS
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Install Determinate Nix (flakes enabled)
+        uses: DeterminateSystems/determinate-nix-action@v3
+
+
+      - name: Setup upterm session
+        uses: owenthereal/action-upterm@v1
+
+      # - name: Build the flake
+      #   run: sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#simple
