@@ -1,50 +1,50 @@
 
 
 const overrideConfig = {
-    audioQuality: {
-        stereo: false
-    },
-    bosh: 'https://xmpp.rtcv5-us.cometchat-staging.com/http-bind',
-    bridgeChannel: {
-        preferSctp: true
-    },
-    constraints: {
-        video: {
-            height: {
-                ideal: 720,
-                max: 720,
-                min: 180
-            },
-            width: {
-                ideal: 1280,
-                max: 1280,
-                min: 320
-            }
-        }
-    },
-    e2ee: [],
-    e2eping: {
-        enabled: false
-    },
-    flags: {
-        receiveMultipleVideoStreams: true,
-        sendMultipleVideoStreams: true,
-        sourceNameSignaling: true,
-        ssrcRewritingEnabled: true
-    },
-    hiddenDomain: 'hidden.rtcv5-us.cometchat-staging.com',
+    // audioQuality: {
+    //     stereo: false
+    // },
+    bosh: 'https://xmpp.rtcv5-in.cometchat.io/http-bind',
+    // bridgeChannel: {
+    //     preferSctp: true
+    // },
+    // constraints: {
+    //     video: {
+    //         height: {
+    //             ideal: 720,
+    //             max: 720,
+    //             min: 180
+    //         },
+    //         width: {
+    //             ideal: 1280,
+    //             max: 1280,
+    //             min: 320
+    //         }
+    //     }
+    // },
+    // e2ee: [],
+    // e2eping: {
+    //     enabled: false
+    // },
+    // flags: {
+    //     receiveMultipleVideoStreams: true,
+    //     sendMultipleVideoStreams: true,
+    //     sourceNameSignaling: true,
+    //     ssrcRewritingEnabled: true
+    // },
+    hiddenDomain: 'hidden.rtcv5-in.cometchat.io',
     hosts: {
-        domain: 'rtcv5-us.cometchat-staging.com',
-        muc: 'conference.rtcv5-us.cometchat-staging.com'
+        domain: 'rtcv5-in.cometchat.io',
+        muc: 'conference.rtcv5-in.cometchat.io'
     },
-    p2p: {
-        enabled: true
-    },
-    resolution: 720,
+    // p2p: {
+    //     enabled: true
+    // },
+    // resolution: 720,
     serviceUrl:
-        'wss://xmpp.rtcv5-us.cometchat-staging.com/xmpp-websocket?room=test',
+        'wss://xmpp.rtcv5-in.cometchat.io/xmpp-websocket?room=test',
     websocket:
-        'wss://xmpp.rtcv5-us.cometchat-staging.com/xmpp-websocket'
+        'wss://xmpp.rtcv5-in.cometchat.io/xmpp-websocket'
 };
 
 /**
