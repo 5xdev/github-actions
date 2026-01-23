@@ -4,7 +4,7 @@ const overrideConfig = {
     // audioQuality: {
     //     stereo: false
     // },
-    bosh: 'https://xmpp.rtcv5-in.cometchat.io/http-bind',
+    bosh: 'https://xmpp.rtcv5-us.cometchat-staging.com/http-bind',
     // bridgeChannel: {
     //     preferSctp: true
     // },
@@ -32,19 +32,19 @@ const overrideConfig = {
     //     sourceNameSignaling: true,
     //     ssrcRewritingEnabled: true
     // },
-    hiddenDomain: 'hidden.rtcv5-in.cometchat.io',
+    hiddenDomain: 'hidden.rtcv5-us.cometchat-staging.com',
     hosts: {
-        domain: 'rtcv5-in.cometchat.io',
-        muc: 'conference.rtcv5-in.cometchat.io'
+        domain: 'rtcv5-us.cometchat-staging.com',
+        muc: 'conference.rtcv5-us.cometchat-staging.com'
     },
     // p2p: {
     //     enabled: true
     // },
     // resolution: 720,
     serviceUrl:
-        'wss://xmpp.rtcv5-in.cometchat.io/xmpp-websocket?room=test',
+        'wss://xmpp.rtcv5-us.cometchat-staging.com/xmpp-websocket?room=test',
     websocket:
-        'wss://xmpp.rtcv5-in.cometchat.io/xmpp-websocket'
+        'wss://xmpp.rtcv5-us.cometchat-staging.com/xmpp-websocket'
 };
 
 /**
