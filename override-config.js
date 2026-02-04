@@ -44,7 +44,10 @@ const overrideConfig = {
     serviceUrl:
         'wss://xmpp.rtcv5-us.cometchat-staging.com/xmpp-websocket?room=test',
     websocket:
-        'wss://xmpp.rtcv5-us.cometchat-staging.com/xmpp-websocket'
+        'wss://xmpp.rtcv5-us.cometchat-staging.com/xmpp-websocket',
+    SHOW_JITSI_WATERMARK: false,
+    SHOW_POWERED_BY: false,
+    SHOW_PROMOTIONAL_CLOSE_PAGE: false,
 };
 
 /**
