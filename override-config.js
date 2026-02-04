@@ -48,6 +48,7 @@ const overrideConfig = {
     SHOW_JITSI_WATERMARK: false,
     SHOW_POWERED_BY: false,
     SHOW_PROMOTIONAL_CLOSE_PAGE: false,
+    FILM_STRIP_MAX_HEIGHT: 200,
 };
 
 /**
